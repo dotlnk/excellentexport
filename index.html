@@ -18,12 +18,15 @@
 
         <br/>
 
-        <a download="somedata.xls" href="#" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a>
+        <a href="#" onclick="ExcellentExport.excel('table name', 'sheet name', 'datatable');">Export to Excel</a>
         <br/>
+        <div>
+            <p onclick="exportExcel();">div点击导出表格</p>
+        </div>
 
-        <a download="somedata.csv" href="#" onclick="return ExcellentExport.csv(this, 'datatable');">Export to CSV - UTF8</a>
+        <a href="#" onclick="ExcellentExport.csv('csv name', 'datatable');">Export to CSV - UTF8</a>
         <br/>
-        <a download="somedata.csv" href="#" onclick="return ExcellentExport.csv(this, 'datatable', ';');">Export to CSV - Using semicolon ";" separator - UTF8</a>
+        <a href="#" onclick="ExcellentExport.csv('csv name', 'datatable', ';');">Export to CSV - Using semicolon ";" separator - UTF8</a>
         <br/>
 
         <table id="datatable">
@@ -54,4 +57,9 @@
             </tr>
         </table>
     </body>
+    <script type="text/javascript">
+        function exportExcel(){
+            ExcellentExport.excel("table","sheet 1","datatable");
+        }
+    </script>
 </html>
